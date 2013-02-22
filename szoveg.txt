@@ -1,0 +1,2 @@
+Ez egy szöveges fájl, amit a VIM szövegszerkesztovel hoztam létre.
+Most hozzáadtam egy plusz sort.
