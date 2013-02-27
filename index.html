@@ -14,7 +14,8 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body onload="checkCookies()">
+
     <div class="wrapper">
       <header>
         <h1 class="header">GitRepo</h1>
@@ -33,10 +34,14 @@
       </header>
       <section>
         <h3>1st homework: HTML and JavaScript actions</h3>
-		<div id="div1">Hit the button to change the color of this text!</div>
+		<div id="div1" onclick="this.innerHTML=Date()">Hit the button to change the color of this text! Or click on this text to display the actual date.</div>
 		<button id="button">Button</button>
+		<!-- <input type="button" id="button" value="Button" /> -->
 
 <p></p>
+
+<div onmouseover="mOver(this)" onmouseout="mOut(this)" onmousedown="mDown(this)" onmouseup="mUp(this)" style="background-color:#D94A38;width:120px;height:20px;padding:40px;">Mouse Over Me</div>
+
 <p>Here's the JavaScript code:</p>
 <pre><code>var button, counter = 0;
 
@@ -52,6 +57,35 @@ function changeColor() {
     document.getElementById('div1').style.color='red';
   counter++;
   if (counter>0) button.innerHTML = 'Click again';
+}
+
+function checkCookies() {
+	if (navigator.cookieEnabled==true)
+		alert("Cookies are enabled")	
+	else	
+		alert("Cookies are not enabled")	
+}
+
+function date() {
+	document.getElementById('date').innerHTML = Date();
+}
+  
+function mOver(obj) {
+	obj.innerHTML="Thank You"
+}
+
+function mOut(obj) {
+	obj.innerHTML="Mouse Over Me"
+}
+  
+function mDown(obj) {
+	obj.style.backgroundColor="#1ec5e5";
+	obj.innerHTML="Release Me"
+}
+
+function mUp(obj)	{
+	obj.style.backgroundColor="#D94A38";
+	obj.innerHTML="Thank You"
 }
 
 document.addEventListener('DOMContentLoaded', setup);
@@ -78,6 +112,36 @@ document.addEventListener('DOMContentLoaded', setup);
       </footer>
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-		
+
+  <script>
+  function checkCookies() {
+	if (navigator.cookieEnabled==true)
+		alert("Cookies are enabled")	
+	else	
+		alert("Cookies are not enabled")	
+  }
+  
+  function date() {
+	document.getElementById('date').innerHTML = Date();
+  }
+  
+  function mOver(obj) {
+	obj.innerHTML="Thank You"
+  }
+
+  function mOut(obj) {
+	obj.innerHTML="Mouse Over Me"
+  }
+  
+  function mDown(obj) {
+	obj.style.backgroundColor="#1ec5e5";
+	obj.innerHTML="Release Me"
+  }
+
+  function mUp(obj)	{
+	obj.style.backgroundColor="#D94A38";
+	obj.innerHTML="Thank You"
+  }
+  </script>
   </body>
 </html>
