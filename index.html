@@ -36,10 +36,25 @@
 		<button id="button">Button</button>
 
 <p></p>
+<p>Here's the JavaScript code:</p>
+<pre><code>var button;
+var counter = 0;
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+function setup() {
+  button = document.getElementById('button');
+  button.addEventListener('click', changeColor);
+}
+
+function changeColor() {
+  if (counter%2==0)
+    document.getElementById('div1').style.color='green';
+  else
+    document.getElementById('div1').style.color='red';
+  counter++;
+  if (counter>0) button.innerHTML = 'Click again';
+}
+
+document.addEventListener('DOMContentLoaded', setup);
 </code></pre>
 
 <p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
