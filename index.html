@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Gitrepo by ThomasSalty</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+	<script src="javascripts/2.hazi_1.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body onload="checkCookies()">
+
+    <div class="wrapper">
+      <header>
+        <h1 class="header">GitRepo</h1>
+        <p class="header">My git repository for homeworks of a web development course</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/ThomasSalty/gitrepo/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/ThomasSalty/gitrepo/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/ThomasSalty/gitrepo">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This page is maintained by <a class="header name" href="https://github.com/ThomasSalty">Thomas Salty</a></p>
+		<p class="header">Find me on <a id="blue" class="header name" href="http://www.facebook.com/thomas.salty">Facebook</a></p>
+		<script>document.getElementById('blue').style.color="royalblue"</script>
+      </header>
+      <section>
+        <h3>1st homework: HTML and JavaScript actions</h3>
+		<div id="div1" onclick="this.innerHTML=Date()">Hit the button to change the color of this text! Or click on this text to display the actual date.</div>
+		<button id="button">Button</button>
+		<!-- <input type="button" id="button" value="Button" /> -->
+<p></p>
+<div>Here's the JavaScript code:</div>
+<pre><code>function checkCookies() {
+	if (navigator.cookieEnabled==true)
+		alert("Cookies are enabled")	
+	else	
+		alert("Cookies are not enabled")	
+}
+
+var button, counter = 0;
+
+function setup() {
+  button = document.getElementById('button');
+  button.addEventListener('click', changeColor);
+}
+
+function changeColor() {
+  if (counter%2==0)
+    document.getElementById('div1').style.color='green';
+  else
+    document.getElementById('div1').style.color='red';
+  counter++;
+  if (counter>0) button.innerHTML = 'Click again';
+}
+
+function date() {
+	document.getElementById('date').innerHTML = Date();
+}
+</code></pre>
+
+<h3>Mouse events: onmouseover="mOver(this)" onmouseout="mOut(this)" onmousedown="mDown(this)" onmouseup="mUp(this)"</h3>
+<div align="center" onmouseover="mOver(this)" onmouseout="mOut(this)" onmousedown="mDown(this)" onmouseup="mUp(this)" style="background-color:#D94A38;width:120px;height:20px;padding:40px;">Mouse Over Me</div>
+<p></p>
+
+<div>JavaScript code:</div>
+<code><pre>
+function mOver(obj) {
+	obj.innerHTML="Thank You"
+}
+
+function mOut(obj) {
+	obj.innerHTML="Mouse Over Me"
+}
+  
+function mDown(obj) {
+	obj.style.backgroundColor="#1ec5e5";
+	obj.innerHTML="Release Me"
+}
+
+function mUp(obj)	{
+	obj.style.backgroundColor="#D94A38";
+	obj.innerHTML="Thank You"
+}
+
+document.addEventListener('DOMContentLoaded', setup);
+</code></pre>
+
+      </section>
+	  
+	    <div class="banner" align="left">
+		<a href="http://flightdiary.net/Thomasson"><img src="http://banner.flightdiary.net/Thomasson" style="border:0px" width="240px" alt="My Flightdiary.net profile" /></a>
+		</div>
+	  
+      <footer>
+
+	    <div><small>Copyright &copy;
+			<script>document.write(new Date().getFullYear());</script>
+		</small></div>
+        <p><small><a href="https://github.com/pulilab">Pulilab on GitHub</a></small></p>
+      </footer>
+      </div>
+
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+
+  <script>
+  function checkCookies() {
+	if (navigator.cookieEnabled==true)
+		alert("Cookies are enabled")	
+	else	
+		alert("Cookies are not enabled")	
+  }
+  
+  function date() {
+	document.getElementById('date').innerHTML = Date();
+  }
+  
+  function mOver(obj) {
+	obj.innerHTML="Thank You"
+  }
+
+  function mOut(obj) {
+	obj.innerHTML="Mouse Over Me"
+  }
+  
+  function mDown(obj) {
+	obj.style.backgroundColor="#1ec5e5";
+	obj.innerHTML="Release Me"
+  }
+
+  function mUp(obj)	{
+	obj.style.backgroundColor="#D94A38";
+	obj.innerHTML="Thank You"
+  }
+  </script>
+  <noscript>Your browser does not support JavaScript</noscript>
+  </body>
+</html>
